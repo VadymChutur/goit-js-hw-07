@@ -28,8 +28,12 @@ function createGalleryItemsMarkup(items) {
 function openOriginalImgAtClickPrev(evt) {
   evt.preventDefault();
   console.log(evt.currentTarget);
-  const giveLinkToOriginalImg = document.querySelector('.gallery__link');
+  const giveLinkToOriginalImg =
+    evt.currentTarget.querySelector('.gallery__link');
   console.log(giveLinkToOriginalImg);
+  console.log(evt.currentTarget.nodeName);
+  console.log(evt.target.nodeName);
+
   //   if (evt.target.nodeName !== IMG) {
   //     return;
   //   }
