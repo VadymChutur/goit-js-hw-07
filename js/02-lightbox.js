@@ -8,15 +8,8 @@ const imagTumbInGalery = document.querySelector('.gallery');
 imagTumbInGalery.innerHTML = createGalleryItemsMarkup(galleryItems);
 
 const lightbox = new SimpleLightbox('.gallery a', {
-  //   captionsData: 'title',
-  captionType: 'data',
-  //   captions: true,
-  captionData: 'alt',
-  //   captionPosition: 'bottom',
   captionDelay: 250,
 });
-
-lightbox();
 
 function createGalleryItemsMarkup(items) {
   return items
@@ -26,7 +19,8 @@ function createGalleryItemsMarkup(items) {
         <a class="gallery__link"
                 href="${original}">
                 <img class="gallery__image" src="${preview}" 
-                alt="${description}" />
+                alt="${description}" 
+                title="${description}"/>
             </a>
         </li>`
     )
