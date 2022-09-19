@@ -9,6 +9,7 @@ imagTumbInGalery.innerHTML = createGalleryItemsMarkup(galleryItems);
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
+  captionsData: 'alt',
 });
 
 function createGalleryItemsMarkup(items) {
@@ -19,10 +20,9 @@ function createGalleryItemsMarkup(items) {
         <a class="gallery__link"
                 href="${original}">
                 <img class="gallery__image" src="${preview}" 
-                alt="${description}" 
-                title="${description}"/>
-            </a>
-        </li>`
+                alt="${description}"/>
+                </a>
+                </li>`
     )
     .join('');
 }
