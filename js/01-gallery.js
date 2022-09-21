@@ -44,14 +44,20 @@ function openOriginalImgAtClickPrev(evt) {
       },
     }
   );
+
+  function closeKeyDownKeyEsc(evt) {
+    console.log(evt);
+    if (evt.code === 'Escape') {
+      instance.close();
+    }
+  }
+
   instance.show();
 }
 
-function closeKeyDownKeyEsc(evt) {
-  console.log(evt);
-  if (evt.code === 'Escape') {
-    console.log(this);
-    console.log(instance);
-    instance.close();
-  }
-}
+// function closeKeyDownKeyEsc(evt) {
+//   console.log(evt);
+//   if (evt.code === 'Escape') {
+//     instance.close();
+//   }
+// }
