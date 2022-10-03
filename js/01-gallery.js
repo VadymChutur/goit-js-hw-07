@@ -37,27 +37,23 @@ function openOriginalImgAtClickPrev(evt) {
     `,
     {
       onShow: (instance) => {
-        document.addEventListener('keydown', closeKeyDownKeyEsc);
+        document.addEventListener('keydown', (e) =>
+          closeKeyDownKeyEsc(e, instance)
+        );
       },
       onClose: (instance) => {
-        document.removeEventListener('keydown', closeKeyDownKeyEsc);
+        document.removeEventListener('keydown', (e) =>
+          closeKeyDownKeyEsc(e, instance)
+        );
       },
     }
   );
 
-  function closeKeyDownKeyEsc(evt) {
-    console.log(evt);
-    if (evt.code === 'Escape') {
-      instance.close();
-    }
-  }
-
   instance.show();
 }
 
-// function closeKeyDownKeyEsc(evt) {
-//   console.log(evt);
-//   if (evt.code === 'Escape') {
-//     instance.close();
-//   }
-// }
+function closeKeyDownKeyEsc(evt, instance) {
+  if (evt.code === 'Escape') {
+    instance.close();
+  }
+}
